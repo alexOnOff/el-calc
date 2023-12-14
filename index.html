@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <title>El-Calc</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+
+    <h1>Calculator</h1>
+    <label>  </label>
+
+    <input id="buttonSeven" type="button" value="7" />
+    <input id="buttonEight" type="button" value="8" />
+    <input id="buttonNine" type="button" value="9" onclick="addNine();"/><br>
+    <input id="buttonFour" type="button" value="4" />
+    <input id="buttonFive" type="button" value="5" />
+    <input id="buttonSix" type="button" value="6" /><br>
+    <input id="buttonOne" type="button" value="1" />
+    <input id="buttonTwo" type="button" value="2" />
+    <input id="buttonThree" type="button" value="3" /><br>
+    <input id="buttonZero" type="button" value="0" />
+    <input id="buttonClear" type="button" value="clear"/>
+    
+    <script src="./calculator.js"></script>
   </body>
 </html>
