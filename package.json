@@ -1,0 +1,23 @@
+{
+  "name": "el-calc",
+  "version": "1.0.0",
+  "description": "Calculator project. Studying electron and ffi package. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexOnOff/el-calc.git"
+  },
+  "author": "alexOnOff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexOnOff/el-calc/issues"
+  },
+  "homepage": "https://github.com/alexOnOff/el-calc#readme",
+  "dependencies": {
+    "electron": "^28.0.0"
+  }
+}
