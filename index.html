@@ -10,19 +10,26 @@
   <body>
 
     <h1>Calculator</h1>
-    <label>  </label>
-
-    <input id="buttonSeven" type="button" value="7" />
-    <input id="buttonEight" type="button" value="8" />
-    <input id="buttonNine" type="button" value="9" onclick="addNine();"/><br>
-    <input id="buttonFour" type="button" value="4" />
-    <input id="buttonFive" type="button" value="5" />
-    <input id="buttonSix" type="button" value="6" /><br>
-    <input id="buttonOne" type="button" value="1" />
-    <input id="buttonTwo" type="button" value="2" />
-    <input id="buttonThree" type="button" value="3" /><br>
-    <input id="buttonZero" type="button" value="0" />
-    <input id="buttonClear" type="button" value="clear"/>
+    <input type="text" id="result" value="" readonly/><br>
+    <input id="buttonChangeSign" class="operation" type="button" value="+/-"/>
+    <input id="buttonClear" class="operation" type="button" value="C"/>
+    <input id="buttonDividing" class="operation" type="button" value="/"/><br>
+    <input id="buttonSeven" class="digit" type="button" value="7" />
+    <input id="buttonEight" class="digit" type="button" value="8" />
+    <input id="buttonNine" class="digit" type="button" value="9"/>
+    <input id="buttonMultiply" class="operation" type="button" value="*"/><br>
+    <input id="buttonFour" class="digit" type="button" value="4" />
+    <input id="buttonFive" class="digit" type="button" value="5" />
+    <input id="buttonSix" class="digit" type="button" value="6" />
+    <input id="buttonSubtraction" class="operation" type="button" value="-"/><br>
+    <input id="buttonOne" class="digit" type="button" value="1" />
+    <input id="buttonTwo" class="digit" type="button" value="2" />
+    <input id="buttonThree" class="digit" type="button" value="3" />
+    <input id="buttonPlus" class="operation" type="button" value="+"/><br>
+    <input id="buttonZero" class="digit" type="button" value="0" />
+    <input id="buttonDoubleZero" class="digit" type="button" value="00" />
+    <input id="buttonDot" type="button" value="."/>
+    <input id="buttonEqual" type="button" value="="/>
     
     <script src="./calculator.js"></script>
   </body>
