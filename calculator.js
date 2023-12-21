@@ -16,7 +16,6 @@ for(var i = 0; i < digits.length; i++)
 {
     digits[i].addEventListener('click', function(){
         if(result.value == 0 || isOperationActive){
-            operandFirst = result.value;
             result.value = '';
         }
             
@@ -32,6 +31,7 @@ for(var i = 0; i < opsBtns.length; i++)
     opsBtns[i].addEventListener('click', function(){
 
         currentOperation = this.value;
+        operandFirst = result.value;
         isOperationActive = true;
     })
 }
@@ -66,7 +66,9 @@ equal.addEventListener('click', () => {
         ret_val = calculate(operandFirst, operandSecond, currentOperation);
         console.log(ret_val);
         result.value = ret_val;
+        operandFirst = ret_val;
     }
+    
 })
 
 function calculate(operand_f, operand_s, operation)
@@ -75,18 +77,14 @@ function calculate(operand_f, operand_s, operation)
     {
         case '+':
             return Number(operand_f) + Number(operand_s);
-            break;
         case '-':
             return Number(operand_f) - Number(operand_s);
-            break;
         case '*':
             return Number(operand_f) * Number(operand_s);
-            break;
         case '/':
             if(operand_s == 0)
                 return NaN;
             return Number(operand_f) / Number(operand_s);
-            break;
         default:
             console.error('Undefined operation', operation)
             break;
