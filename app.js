@@ -3,13 +3,13 @@ const path = require('node:path')
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
+    width: 400,
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-
+  win.webContents.openDevTools()
   win.loadFile('index.html')
 }
 
