@@ -1,3 +1,6 @@
+//const koffi = require('koffi');
+//
+
 const digits = document.getElementsByClassName("digit")
 const dot = document.getElementById("buttonDot")
 const changeSign = document.getElementById("buttonChangeSign")
@@ -71,22 +74,3 @@ equal.addEventListener('click', () => {
     
 })
 
-function calculate(operand_f, operand_s, operation)
-{
-    switch(operation)
-    {
-        case '+':
-            return Number(operand_f) + Number(operand_s);
-        case '-':
-            return Number(operand_f) - Number(operand_s);
-        case '*':
-            return Number(operand_f) * Number(operand_s);
-        case '/':
-            if(operand_s == 0)
-                return NaN;
-            return Number(operand_f) / Number(operand_s);
-        default:
-            console.error('Undefined operation', operation)
-            break;
-    }
-}
