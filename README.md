@@ -1,5 +1,9 @@
 # Electron calculator 
-Try study electron, node.js and coffi package
+Try study electron, node.js and koffi package
+
+## Build Libs
+Open directory cpp-libs in Visual Studio. 
+Build libraries by CMake.
 
 ## Build
 
@@ -7,5 +11,10 @@ Try study electron, node.js and coffi package
 npm install --save electron 
 
 npm install koffi
+```
+
+## Start
+```
+npm start
 ```
 
