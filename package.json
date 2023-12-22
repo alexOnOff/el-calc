@@ -1,6 +1,7 @@
 {
   "name": "el-calc",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "Calculator project. Studying electron and ffi package. ",
   "main": "app.js",
   "scripts": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/alexOnOff/el-calc#readme",
   "dependencies": {
-    "electron": "^28.0.0"
+    "electron": "^28.1.0",
+    "koffi": "^2.7.0"
   }
 }
