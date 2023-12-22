@@ -1,8 +1,10 @@
-const { app, BrowserWindow } = require('electron/main')
+const { app, BrowserWindow } = require('electron/main');
 
-const path = require('node:path')
+const path = require('node:path');
 const koffi = require('koffi');
+const { ipcMain } = require('electron');
 const lib = koffi.load('cpp-libs/bin/Calc-cpp-ffi.dll')
+const calculate = lib.func("Calculate", 'double', ['double', 'double', 'int'])
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -17,6 +19,12 @@ function createWindow () {
 }
 
 app.whenReady().then(() => {
+  ipcMain.handle('calculate', (_, op1, op2, op) => {
+    console.log(`num - ${op1} ${op2} ${op}`);
+    let res = calculate_func(op1, op2, op);
+    console.log(`res = ${res}`);
+    return res
+  })
   createWindow()
 
   app.on('activate', () => {
@@ -32,27 +40,21 @@ app.on('window-all-closed', () => {
   }
 })
 
-function calculate(operand_f, operand_s, operation)
-{
-    switch(operation)
-    {
-        case '+':
-            
-            //let calculate = lib.stdcall('Calculate', 'double', ['double', 'double', 'int']);
-            //let res = calculate(Number(operand_f), Number(operand_s), 0);
-            //console.log(res);
-            return Number(operand_f) + Number(operand_s);
-        case '-':
-            return Number(operand_f) - Number(operand_s);
-        case '*':
-            return Number(operand_f) * Number(operand_s);
-        case '/':
-            if(operand_s == 0)
-                return NaN;
-            return Number(operand_f) / Number(operand_s);
-        default:
-            console.error('Undefined operation', operation)
-            break;
-    }
-}
 
+function calculate_func(operand_f, operand_s, operation)
+{
+  const operands = {
+    '+': 0,
+    '-': 1,
+    '*': 2,
+    '/': 3
+  }
+
+  if (operation in operands) {
+    let res = calculate(Number(operand_f), Number(operand_s), operands[operation]);
+    console.log(Number(res));
+    return Number(res);
+  } else {
+    console.error('Undefined operation', operation)
+  }
+}

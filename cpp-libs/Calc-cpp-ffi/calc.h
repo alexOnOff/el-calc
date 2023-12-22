@@ -1,8 +1,8 @@
 #include <iostream>
-#ifdef WIN32
+#ifdef _WIN32 || WIN32
 #define EXPORT __declspec(dllexport)
 #else 
 #define EXPORT
 #endif
 
-extern "C" double EXPORT Calculate(float operand_first, float operand_second, int operation);
+extern "C" double EXPORT Calculate(double operand_first, double operand_second, int operation);

@@ -1,6 +1,3 @@
-//const koffi = require('koffi');
-//
-
 const digits = document.getElementsByClassName("digit")
 const dot = document.getElementById("buttonDot")
 const changeSign = document.getElementById("buttonChangeSign")
@@ -8,11 +5,11 @@ const result = document.getElementById("result")
 const clear = document.getElementById("buttonClear")
 const opsBtns = document.getElementsByClassName("operation")
 const equal = document.getElementById("buttonEqual");
-result.value = '0'
-currentOperation = null;
-isOperationActive = false;
-operandFirst = null;
-operandSecond = null;
+result.value = '0';
+let currentOperation = null;
+let isOperationActive = false;
+let operandFirst = null;
+let operandSecond = null;
 
 // digits
 for(var i = 0; i < digits.length; i++)
@@ -65,12 +62,12 @@ equal.addEventListener('click', () => {
     operandSecond = result.value;
     if(operandFirst != null && operandSecond != null && currentOperation != null)
     {
+        window.something.calculate(operandFirst, operandSecond, currentOperation)
+        .then((data) => {
+            result.value = data;
+            operandFirst = data;
+        });
         
-        ret_val = calculate(operandFirst, operandSecond, currentOperation);
-        console.log(ret_val);
-        result.value = ret_val;
-        operandFirst = ret_val;
     }
     
 })
-
